@@ -17,14 +17,14 @@
 %define __os_install_post %{nil}
 
 Name: anaconda-python-distribution
-Version: 2.3.0
+Version: 4.2.0
 Release: 1%{?dist}
 Summary: Anaconda Python Distribution
 Group: System Environment/Base
 License: http://docs.continuum.io/anaconda/eula
 URL: https://www.continuum.io/anaconda
-Source0: Anaconda-%{version}-Linux-x86.sh
-Source1: Anaconda-%{version}-Linux-x86_64.sh
+Source0: Anaconda2-%{version}-Linux-x86.sh
+Source1: Anaconda2-%{version}-Linux-x86_64.sh
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 # https://github.com/irasnyd/mkchroot
@@ -64,7 +64,7 @@ data processing, predictive analytics, and scientific computing.
 mkchroot \
     "$PWD" \
     awk basename bash bzip2 cat chown cp dirname echo file grep ln ls md5sum \
-    mkdir mknod mount mv rm script seq tail tar umount uname wc
+    mkdir mknod mount mv rm script seq tail tar umount uname wc tr
 
 # build the chroot run script
 cat > build.sh << EOF
